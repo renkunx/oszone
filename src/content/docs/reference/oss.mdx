@@ -2,6 +2,8 @@
 title: Example Reference
 description: A reference page in my new Starlight docs site.
 ---
+import Github from '@/components/github.jsx'
+import { FileTree } from '@astrojs/starlight/components'
 
 Reference pages are ideal for outlining how things work in terse and clear terms.
 Less concerned with telling a story or addressing a specific use case, they should give a comprehensive outline of what you're documenting.
@@ -9,3 +11,33 @@ Less concerned with telling a story or addressing a specific use case, they shou
 ## Further reading
 
 - Read [about reference](https://diataxis.fr/reference/) in the Diátaxis framework
+
+<Github />
+
+
+<FileTree>
+
+- src
+  - enums                善用 Enum 提高代码可读性
+    - credit-card.ts 
+    - flag.ts
+    - ...
+  - services             提供的核心服务
+    - account.ts         账户
+    - avatar.ts          头像
+    - databases.ts       数据库
+    - functions.ts       云函数
+    - graphql.ts         GraphQL
+    - locale.ts          语言
+    - storage.ts         存储
+    - teams.ts           团队
+    - message.ts         消息
+  - **clients.ts**       客户端
+  - permissions.ts       权限
+  - query.ts             数据库查询
+  - role.ts              角色
+  - ...
+- README.md
+- package.json
+- ...
+</FileTree>

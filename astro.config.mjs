@@ -6,6 +6,9 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
+	build: {
+    inlineStylesheets: 'always'
+  },
   integrations: [starlight({
     title: '开源地带',
     social: {

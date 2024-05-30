@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function Component() {
   return (
-    <Card className="w-full max-w-sm">
+    <Card className="w-full max-w-sm not-content">
       <CardHeader className="p-4">
         <div className="flex items-center justify-between">
           <div className="text-2xl font-semibold">shadcn/ui</div>
@@ -27,7 +27,7 @@ export default function Component() {
           Beautifully designed components that you can copy and paste into your apps.
         </div>
       </CardContent>
-      <CardFooter className="p-4 flex items-center justify-between">
+      <CardFooter className="p-4 flex items-center justify-between align-middle">
         <div className="text-sm leading-loose text-gray-500 dark:text-gray-400 space-x-4">
           <Link className="font-semibold hover:underline underline-offset-2" href="#">
             2,345 Stars
