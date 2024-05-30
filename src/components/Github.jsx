@@ -1,7 +1,20 @@
 import { CardHeader, CardContent, CardFooter, Card } from "@/components/ui/card"
 import Link from "next/link"
+import { useEffect } from 'react'
 
-export default function Component() {
+export default function Github(props) {
+  useEffect(() => {
+    console.log(props)
+    getRepoInfos(props.repo)
+  }, [])
+  const getRepoInfos = async(repo) => {
+    try {
+      const res = await fetch(`https://api.github.com/repos/${repo}`)
+      console.log(res)
+    } catch (e) {
+      console.error(e)
+    }
+  }
   return (
     <Card className="w-full max-w-sm not-content">
       <CardHeader className="p-4">
@@ -12,7 +25,7 @@ export default function Component() {
               alt="User profile image"
               className="rounded-full"
               height="32"
-              src="/placeholder.svg"
+              src="../assets/houston.webp"
               style={{
                 aspectRatio: "32/32",
                 objectFit: "cover",
