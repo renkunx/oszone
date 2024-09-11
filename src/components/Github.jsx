@@ -1,23 +1,22 @@
 import { CardHeader, CardContent, CardFooter, Card } from "@/components/ui/card"
 import Link from "next/link"
-import React, { useEffect, useState } from 'react'
-import Avatar from '@/assets/houston.webp'
+import { useEffect, useState } from 'react'
 
+const GITHUB_TOKEN = import.meta.env.GITHUB_TOKEN
 export default function Github(props) {
   const [repoInfos, setRepoInfos] = useState({})
   useEffect(() => {
     getRepoInfos(props.repo)
   }, [])
   const getRepoInfos = async(repo) => {
-    console.log('开始获取仓库信息:', repo)
     try {
       const res = await fetch(`https://api.github.com/repos/${repo}`, {
           headers: {
+          'Authorization': GITHUB_TOKEN,
           'Accept': 'application/vnd.github.v3+json'
         }
       })
       const data = await res.json()
-      console.log(data)
       setRepoInfos(data)
     } catch (e) {
       console.error('获取仓库信息时出错：', e)
