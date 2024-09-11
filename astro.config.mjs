@@ -1,11 +1,23 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import react from "@astrojs/react";
-
+import path from 'path';
+import { fileURLToPath } from 'url';
 import tailwind from "@astrojs/tailwind";
-
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 // https://astro.build/config
 export default defineConfig({
+  vite: {
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, './src'),
+      },
+    },
+    define: {
+      'process.env': process.env,
+    },
+  },
 	build: {
     inlineStylesheets: 'always'
   },
