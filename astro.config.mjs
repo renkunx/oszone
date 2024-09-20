@@ -16,7 +16,7 @@ export default defineConfig({
     },
     define: {
       'process.env': process.env,
-    },
+    }
   },
 	build: {
     inlineStylesheets: 'always'
@@ -39,6 +39,10 @@ export default defineConfig({
       autogenerate: {
         directory: 'reference'
       }
-    }]
-  }), react(), tailwind()]
+    }],
+    customCss: [
+      // Relative path to your custom CSS file
+      './src/styles/globals.css',
+    ],
+  }), react(), tailwind(),]
 });
