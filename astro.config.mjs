@@ -21,28 +21,32 @@ export default defineConfig({
 	build: {
     inlineStylesheets: 'always'
   },
-  integrations: [starlight({
-    title: '开源地带',
-    social: {
-      github: 'https://github.com/withastro/starlight'
-    },
-    sidebar: [{
-      label: 'Guides',
-      items: [
-      // Each item here is one entry in the navigation menu.
-      {
-        label: 'Example Guide',
-        link: '/guides/example/'
-      }]
-    }, {
-      label: 'Reference',
-      autogenerate: {
-        directory: 'reference'
-      }
-    }],
-    customCss: [
-      // Relative path to your custom CSS file
-      './src/styles/globals.css',
-    ],
-  }), react(), tailwind(),]
+  integrations: [
+    starlight({
+      title: '开源地带',
+      social: {
+        github: 'https://github.com/withastro/starlight'
+      },
+      sidebar: [{
+        label: 'Guides',
+        items: [
+        // Each item here is one entry in the navigation menu.
+        {
+          label: 'Example Guide',
+          link: '/guides/example/'
+        }]
+      }, {
+        label: 'Reference',
+        autogenerate: {
+          directory: 'reference'
+        }
+      }],
+      customCss: [
+        // Relative path to your custom CSS file
+        './src/styles/globals.css',
+      ],
+    }), 
+    react(), 
+    tailwind()
+  ]
 });
